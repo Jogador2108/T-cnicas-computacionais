@@ -2,132 +2,160 @@ import { aleatorio, afirmacoes } from "./aleatorio.js";
 
 export const perguntas = {
   inicio: {
-    texto: "Você é um explorador em busca de um artefato perdido dentro de uma floresta misteriosa. O que deseja fazer primeiro?",
+    texto: "Você acorda em uma floresta misteriosa com três caminhos à sua frente. Qual caminho escolhe?",
     opcoes: {
-      "Seguir pela trilha iluminada": "trilha",
-      "Explorar a caverna escura": "caverna",
-      "Montar um acampamento seguro": "acampamento"
+      "Seguir a trilha iluminada": "trilha",
+      "Entrar na caverna escura": "caverna",
+      "Explorar a floresta densa": "floresta"
     }
   },
   trilha: {
-    texto: "Você segue pela trilha e encontra uma vila antiga. Os moradores parecem desconfiados.",
+    texto: "A trilha leva até uma vila antiga. Os moradores parecem desconfiados.",
     opcoes: {
       "Conversar com os moradores": "vila",
-      "Ignorar e seguir em frente": "selva",
-      "Observar escondido": "espiar"
+      "Seguir sem interagir": "selva",
+      "Observar de longe": "espiar"
     }
   },
   caverna: {
-    texto: "Na caverna, você escuta barulhos estranhos ecoando. Uma tocha está no chão.",
+    texto: "Dentro da caverna, você encontra uma tocha e ouve ruídos estranhos.",
     opcoes: {
       "Acender a tocha": "tocha",
-      "Avançar no escuro": "escuro",
+      "Seguir no escuro": "escuro",
       "Voltar para fora": "inicio"
     }
   },
-  acampamento: {
-    texto: "Você monta o acampamento. Durante a noite, algo se aproxima.",
+  floresta: {
+    texto: "A floresta está cheia de ruídos e você vê algo se mexendo entre as árvores.",
     opcoes: {
-      "Investigar o barulho": "criatura",
-      "Ficar quieto": "seguro",
-      "Fugir imediatamente": "selva"
+      "Investigar o movimento": "criatura",
+      "Seguir em frente rapidamente": "selva",
+      "Subir em uma árvore para observar": "arvore"
     }
   },
   vila: {
-    texto: "Os moradores dizem que o artefato está protegido por enigmas perigosos.",
+    texto: "Os moradores dizem que o artefato está protegido por enigmas e criaturas misteriosas.",
     opcoes: {
       "Pedir ajuda": "ajuda",
-      "Desafiar os enigmas sozinho": "enigmas",
+      "Tentar sozinho": "enigmas",
       "Desistir da missão": "final_desistir"
     }
   },
   espiar: {
-    texto: "Você observa escondido e descobre que eles guardam mapas secretos.",
+    texto: "Você descobre que eles guardam mapas secretos com pistas sobre o artefato.",
     opcoes: {
       "Roubar o mapa": "mapa",
-      "Tentar fazer amizade": "vila",
+      "Tentar se aproximar amigavelmente": "vila",
       "Voltar para trilha": "trilha"
     }
   },
   selva: {
-    texto: "Na selva, você encontra animais selvagens bloqueando o caminho.",
+    texto: "Animais selvagens bloqueiam seu caminho. Eles parecem agressivos.",
     opcoes: {
-      "Tentar domar os animais": "domar",
-      "Fugir rápido": "fuga",
-      "Atacar": "final_morte"
+      "Tentar passar com cuidado": "passagem",
+      "Fugir correndo": "fuga",
+      "Enfrentar os animais": "final_morte"
     }
   },
   tocha: {
-    texto: "Com a tocha acesa, você encontra inscrições antigas em uma parede.",
+    texto: "As inscrições nas paredes dizem: 'A coragem é o caminho, mas a sabedoria salva'.",
     opcoes: {
-      "Traduzir inscrições": "inscricoes",
-      "Seguir adiante": "profundo",
-      "Apagar a tocha": "escuro"
+      "Seguir com a tocha acesa": "profundo",
+      "Apagar a tocha": "escuro",
+      "Tentar decifrar as inscrições": "inscricoes"
     }
   },
   escuro: {
-    texto: "No escuro, você tropeça e cai em um buraco sem fim.",
+    texto: "Você tropeça no escuro e cai em um buraco profundo.",
     opcoes: {
       "Aceitar o destino": "final_morte",
-      "Gritar por ajuda": "final_salvo"
+      "Gritar por socorro": "final_salvo"
     }
   },
   criatura: {
-    texto: "Uma criatura estranha aparece no acampamento.",
+    texto: "Uma criatura estranha aparece. Ela olha para você com curiosidade.",
     opcoes: {
-      "Lutar contra ela": "final_morte",
-      "Fugir para floresta": "selva",
-      "Oferecer comida": "amizade"
+      "Lutar": "final_morte",
+      "Oferecer comida": "amizade",
+      "Fugir": "selva"
     }
   },
   amizade: {
-    texto: "A criatura se torna sua aliada e o guia até o artefato perdido!",
+    texto: "A criatura se torna sua aliada e guia você até o artefato.",
     opcoes: {
       "Pegar o artefato": "final_vitoria",
       "Deixar o artefato": "final_sabedoria"
     }
   },
-  ajuda: {
-    texto: "Os moradores aceitam ajudá-lo e revelam um caminho secreto.",
+  arvore: {
+    texto: "Do alto da árvore, você vê um caminho secreto que leva a uma caverna iluminada.",
     opcoes: {
-      "Seguir pelo caminho": "profundo",
+      "Seguir para a caverna": "caverna",
+      "Descer e seguir a floresta": "selva"
+    }
+  },
+  ajuda: {
+    texto: "Os moradores revelam um atalho seguro até o artefato.",
+    opcoes: {
+      "Seguir o atalho": "profundo",
       "Agradecer e ir embora": "final_sabedoria"
     }
   },
   enigmas: {
-    texto: "Os enigmas testam sua mente. Após muito esforço, você chega ao artefato.",
+    texto: "Após resolver enigmas complexos, você chega a uma sala com o artefato.",
     opcoes: {
       "Pegar o artefato": "final_vitoria",
       "Destruir o artefato": "final_sabedoria"
     }
   },
   inscricoes: {
-    texto: "As inscrições revelam: 'Somente o digno terá poder'.",
+    texto: "As inscrições alertam: 'Somente os dignos serão recompensados'.",
     opcoes: {
       "Continuar avançando": "profundo",
-      "Ignorar o aviso": "final_maldicao"
+      "Ignorar e seguir": "final_maldicao"
+    }
+  },
+  passagem: {
+    texto: "Você passa pelos animais sem ferimentos e encontra uma ponte sobre um rio.",
+    opcoes: {
+      "Atravessar a ponte": "profundo",
+      "Contornar o rio": "selva"
+    }
+  },
+  fuga: {
+    texto: "Você corre e se perde, mas encontra uma cabana abandonada.",
+    opcoes: {
+      "Entrar na cabana": "cabana",
+      "Seguir sem parar": "selva"
+    }
+  },
+  cabana: {
+    texto: "Dentro da cabana, você encontra pistas antigas sobre o artefato.",
+    opcoes: {
+      "Seguir as pistas": "profundo",
+      "Ignorar e descansar": "final_salvo"
     }
   },
   profundo: {
-    texto: "Você encontra o artefato brilhando em um pedestal. O que fazer?",
+    texto: "Você chega ao local do artefato. Ele brilha intensamente sobre um pedestal.",
     opcoes: {
       "Pegar o artefato": "final_vitoria",
-      "Observá-lo de longe": "final_sabedoria",
+      "Observar de longe": "final_sabedoria",
       "Destruir o pedestal": "final_maldicao"
     }
   },
 
   // FINAIS
   final_vitoria: {
-    texto: "🎉 Você conquistou o artefato e completou a missão com sucesso! " + aleatorio(afirmacoes),
+    texto: "🎉 Você conquistou o artefato! " + aleatorio(afirmacoes),
     opcoes: {}
   },
   final_sabedoria: {
-    texto: "🧘 Você escolheu a sabedoria acima da ambição. O verdadeiro tesouro foi o aprendizado.",
+    texto: "🧘 Você escolheu a sabedoria sobre a ambição. O verdadeiro tesouro foi o aprendizado.",
     opcoes: {}
   },
   final_maldicao: {
-    texto: "💀 Ao desafiar o aviso, você libertou uma maldição eterna.",
+    texto: "💀 Ignorar os avisos trouxe uma maldição eterna.",
     opcoes: {}
   },
   final_morte: {
@@ -139,7 +167,7 @@ export const perguntas = {
     opcoes: {}
   },
   final_salvo: {
-    texto: "🙌 Alguém ouviu seus gritos e salvou sua vida. Mas a missão ficou incompleta.",
+    texto: "🙌 Alguém ouviu seus gritos e salvou sua vida, mas a missão ficou incompleta.",
     opcoes: {}
   }
 };
